@@ -1,0 +1,107 @@
+.public-form-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.public-form-container {
+    width: 100%;
+    max-width: 600px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.form-header h1 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-header p {
+    color: var(--text-muted);
+}
+
+.public-form .form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-error-banner {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: var(--error);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.required {
+    color: var(--error);
+    margin-left: 2px;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: var(--spacing-md);
+}
+
+.powered-by {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.powered-by strong {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Field types */
+.checkbox-field,
+.radio-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.checkbox-field,
+.radio-field label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+/* Not found */
+.form-not-found {
+    text-align: center;
+    padding: var(--spacing-2xl);
+}
+
+.form-not-found h1 {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-not-found p {
+    color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+    .public-form-container {
+        padding: var(--spacing-lg);
+    }
+}

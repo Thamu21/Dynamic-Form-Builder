@@ -1,0 +1,91 @@
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    background: var(--bg-primary);
+}
+
+.auth-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-2xl);
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.auth-header {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.auth-header .logo {
+    display: inline-flex;
+    margin-bottom: var(--spacing-lg);
+}
+
+.auth-header h1 {
+    font-size: 1.875rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.auth-header p {
+    color: var(--text-muted);
+}
+
+.auth-form {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    backdrop-filter: blur(10px);
+}
+
+.auth-error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: var(--error);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.875rem;
+}
+
+.auth-submit {
+    width: 100%;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    color: var(--text-muted);
+}
+
+/* Decorative background */
+.auth-decoration {
+    display: none;
+    flex: 1;
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.decoration-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+@media (min-width: 1024px) {
+    .auth-decoration {
+        display: block;
+    }
+
+    .auth-container {
+        margin: 0;
+        padding: var(--spacing-2xl) 4rem;
+    }
+}

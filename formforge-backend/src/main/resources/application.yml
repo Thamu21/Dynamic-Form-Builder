@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: formforge
+  
+  # Database Configuration
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  # JPA Configuration
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+  
+  # Jackson Configuration
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    default-property-inclusion: non_null
+
+# Server Configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# JWT Configuration
+jwt:
+  secret: ${JWT_SECRET}
+  access-token-expiration: 900000      # 15 minutes
+  refresh-token-expiration: 604800000  # 7 days
+
+# Rate Limiting Configuration
+rate-limit:
+  public-form:
+    requests-per-hour: 20
+  form-view:
+    requests-per-minute: 100
+
+# Logging
+logging:
+  level:
+    com.formforge: DEBUG
+    org.springframework.security: INFO
+    org.hibernate.SQL: INFO
+
+# Request Size Limits (Bot Protection)
+spring.servlet.multipart:
+  max-file-size: 1MB
+  max-request-size: 1MB
