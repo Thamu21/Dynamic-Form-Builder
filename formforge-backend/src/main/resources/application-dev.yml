@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: true
+  servlet:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 1MB
+
+logging:
+  level:
+    com.formforge: DEBUG
+    org.hibernate.SQL: DEBUG
+
+jwt:
+  secret: ${JWT_SECRET}
+  access-token-expiration: 900000
+  refresh-token-expiration: 604800000
+
+rate-limit:
+  public-form:
+    requests-per-hour: 20
+  form-view:
+    requests-per-minute: 100
